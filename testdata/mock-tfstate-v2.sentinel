@@ -1,0 +1,25 @@
+terraform_version = "1.1.3"
+
+outputs = {}
+
+resources = {
+	"azurerm_resource_group.rg": {
+		"address":        "azurerm_resource_group.rg",
+		"depends_on":     [],
+		"deposed_key":    "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "rg",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"tainted":        false,
+		"type":           "azurerm_resource_group",
+		"values": {
+			"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+			"location": "westus2",
+			"name":     "myTFResourceGroup",
+			"tags":     {},
+			"timeouts": null,
+		},
+	},
+}

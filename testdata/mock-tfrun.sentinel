@@ -1,0 +1,49 @@
+id = "run-VE8zVb9zZMutqfye"
+created_at = "2022-01-13T17:06:04.363Z"
+message = "Triggered via UI"
+commit_sha = "c74b4af78f7b0264fd5dc767fb7cfe624540dcf5"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"ARM_CLIENT_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_CLIENT_SECRET": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_SUBSCRIPTION_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_TENANT_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "Fioneer",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2022-01-13T16:34:10.810Z",
+	"description": null,
+	"id":          "ws-N7X74NRofSbKwpAW",
+	"name":        "learn-terraform-azure",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "jeff-copeman-fioneer/learn-terraform-azure",
+		"identifier":         "jeff-copeman-fioneer/learn-terraform-azure",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

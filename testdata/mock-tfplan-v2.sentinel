@@ -1,0 +1,188 @@
+terraform_version = "1.1.3"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"azurerm_resource_group.rg": {
+			"address":        "azurerm_resource_group.rg",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "rg",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_resource_group",
+			"values": {
+				"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+				"location": "westus2",
+				"name":     "myTFResourceGroup",
+				"tags":     {},
+				"timeouts": null,
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"azurerm_resource_group.rg": {
+		"address": "azurerm_resource_group.rg",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+				"location": "westus2",
+				"name":     "myTFResourceGroup",
+				"tags":     {},
+				"timeouts": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+				"location": "westus2",
+				"name":     "myTFResourceGroup",
+				"tags":     {},
+				"timeouts": null,
+			},
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "rg",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_resource_group",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"azurerm": {
+				"expressions": {
+					"features": [
+						{},
+					],
+				},
+				"name":               "azurerm",
+				"version_constraint": "~> 2.65",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "azurerm_resource_group.rg",
+					"expressions": {
+						"location": {
+							"constant_value": "westus2",
+						},
+						"name": {
+							"constant_value": "myTFResourceGroup",
+						},
+					},
+					"mode":                "managed",
+					"name":                "rg",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_resource_group",
+				},
+			],
+		},
+	},
+	"format_version": "1.0",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "azurerm_resource_group.rg",
+					"mode":           "managed",
+					"name":           "rg",
+					"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+					"schema_version": 0,
+					"sensitive_values": {
+						"tags": {},
+					},
+					"type": "azurerm_resource_group",
+					"values": {
+						"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+						"location": "westus2",
+						"name":     "myTFResourceGroup",
+						"tags":     {},
+						"timeouts": null,
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.1.3",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "azurerm_resource_group.rg",
+						"mode":           "managed",
+						"name":           "rg",
+						"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+						"schema_version": 0,
+						"sensitive_values": {
+							"tags": {},
+						},
+						"type": "azurerm_resource_group",
+						"values": {
+							"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+							"location": "westus2",
+							"name":     "myTFResourceGroup",
+							"tags":     {},
+							"timeouts": null,
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "azurerm_resource_group.rg",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+					"location": "westus2",
+					"name":     "myTFResourceGroup",
+					"tags":     {},
+					"timeouts": null,
+				},
+				"after_sensitive": {
+					"tags": {},
+				},
+				"after_unknown": {},
+				"before": {
+					"id":       "/subscriptions/c11d005b-3c7c-4094-85ea-10b2fbd67aa2/resourceGroups/myTFResourceGroup",
+					"location": "westus2",
+					"name":     "myTFResourceGroup",
+					"tags":     {},
+					"timeouts": null,
+				},
+				"before_sensitive": {
+					"tags": {},
+				},
+			},
+			"mode":          "managed",
+			"name":          "rg",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_resource_group",
+		},
+	],
+	"terraform_version": "1.1.3",
+}

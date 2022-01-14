@@ -1,0 +1,57 @@
+name: Run Terraform
+on: [push]
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+        
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          environment: 'AzureStack'
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Format Terraform
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+
+      - name: Terraform Init
+        id: init
+        env:
+          ARM_TENANT_ID:       ${{ secrets.ARM_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET:   ${{ secrets.ARM_CLIENT_SECRET }}
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+ 
+      - name: Terraform Plan
+        id: plan
+        env:
+          ARM_TENANT_ID:       ${{ secrets.ARM_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_CLIENT_ID:       ${{ secrets.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET:   ${{ secrets.ARM_CLIENT_SECRET }}
+        run: terraform plan -no-color --out tfplan.binary
+
+      - name: Convert Plan
+        run: terraform show -json tfplan.binary > tfplan.json
+
+      - name: Show Plan
+        run: cat tfplan.json
+
+      - name: Setup Sentinel
+        uses : lawrence-luo-fioneer/sentinel-github-actions/test@master
+        env:
+            STL_ACTION_WORKING_DIR : "."
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

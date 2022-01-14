@@ -8,11 +8,11 @@ jobs:
       - name: Checking out
         uses: actions/checkout@v2
         
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          environment: 'AzureStack'
+#      - name: Azure Login
+#        uses: azure/login@v1
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#          environment: 'AzureStack'
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
